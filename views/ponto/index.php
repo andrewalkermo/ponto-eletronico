@@ -40,22 +40,22 @@
                             <input id="name" type="text" name="nome" class="" data-validate="text" value="">
                         </div>
                         <div class="gt-form">
-                            <button type="button"class="btn success center" onclick="nextDiv('nome-div', 'tipo-div')" name="button">Próximo</button>
+                            <button type="button"class="btn success center projecta-black" onclick="nextDiv('nome-div', 'tipo-div')" name="button">Próximo</button>
                         </div>
                     </div>
                     <div class="tipo-div" style="display:none">
                         <h3>Selecione o tipo de ponto!</h3>
                         <div class="flex-box center">
-                            <button type="button" class="col btn warning" name="button" onclick="nextDiv('tipo-div', 'periodo-div')" >Hórario de sede</button>
-                            <button type="button" class="col btn danger" name="button" onclick="nextDiv('tipo-div', 'periodo-div')" >Trabalho em Projeto</button>
-                            <button type="button" class="col btn success" name="button" onclick="nextDiv('tipo-div', 'periodo-div')" >Horário em atividades</button>
+                            <button type="button" class="col btn projecta-yellow succes" name="button" onclick="nextDiv('tipo-div', 'periodo-div')" >Hórario de sede</button>
+                            <button type="button" class="col btn projecta-black danger" name="button" onclick="nextDiv('tipo-div', 'periodo-div')" >Trabalho em Projeto</button>
+                            <button type="button" class="col btn projecta-yellow success" name="button" onclick="nextDiv('tipo-div', 'periodo-div')" >Horário em atividades</button>
                         </div>
                     </div>
                     <div class="periodo-div" style="display:none">
                         <h3>Selecione o período!</h3>
                         <div class="flex-box center">
-                            <button type="button" class="col btn warning" name="button" onclick="nextDiv('periodo-div', 'horario-div')" >Começo</button>
-                            <button type="button" class="col btn danger" name="button" onclick="nextDiv('periodo-div', 'horario-div')" >Término</button>
+                            <button type="button" class="col btn projecta-black warning" name="button" onclick="nextDiv('periodo-div', 'horario-div')" >Começo</button>
+                            <button type="button" class="col btn projecta-yellow danger" name="button" onclick="nextDiv('periodo-div', 'horario-div')" >Término</button>
                         </div>
                     </div>
                     <div class="horario-div" style="display:none">
@@ -64,7 +64,7 @@
                             <input id="name" type="text" name="nome" class="" data-validate="text" value="">
                         </div>
                         <div class="gt-form">
-                            <button type="button"class="btn success center" name="button">Finalizar</button>
+                            <button type="button"class="btn projecta-black success center" name="button">Finalizar</button>
                         </div>
                     </div>
 
@@ -75,7 +75,7 @@
 
         <script type="text/javascript" src="/vendors/gainTime-2.2.2/js/gaintime.min.js"></script>
         <script type="text/javascript">
-        
+
             function nextDiv(divAtual, divProxima) {
                 var divAtual = (document.getElementsByClassName(divAtual))[0];
                 var divProxima = (document.getElementsByClassName(divProxima))[0];

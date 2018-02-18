@@ -6,6 +6,30 @@
     background-color:#f6c100;
 }
 
+.projecta-black{
+    background-color:#000000;
+    border-color: #f6c100;
+}
+
+.projecta-yellow{
+    background-color:#f6c100;
+    border-color: #000000
+}
+
+.projecta-black.btn:hover, .projecta-black.action:hover, .projecta-black.btn:focus, .projecta-black.action:focus {
+    background-color: #fff !important;
+}
+.projecta-black.btn:hover, .projecta-black.action:hover, .projecta-black.btn:focus, .projecta-black.action:focus {
+    color: #000000 !important;
+}
+
+.projecta-yellow.btn:hover, .projecta-yellow.action:hover, .projecta-yellow.btn:focus, .projecta-yellow.action:focus {
+    background-color: #fff !important;
+}
+.projecta-yellow.btn:hover, .projecta-yellow.action:hover, .projecta-yellow.btn:focus, .projecta-yellow.action:focus {
+    color: #000000 !important;
+}
+
 .gt-top-menu li:hover:not(.btn):not(.action):not(.tag), .gt-top-menu li.active:not(.btn):not(.action):not(.tag), .menu li:hover:not(.btn):not(.action):not(.tag), .menu li.active:not(.btn):not(.action):not(.tag) {
     border-color: #f6c100;
 }
