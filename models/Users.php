@@ -50,20 +50,12 @@
             return $stm->execute();
         }
 
-        public static function readUser($id) {
+        public static function readUser($column, $value) {
             $connect = Connection::connect();
-            $stm = $connect->prepare('SELECT id, username, password, level FROM users WHERE id=:id');
-            $stm->bindValue(':id', $id, PDO::PARAM_INT);
+            $stm = $connect->prepare('SELECT id, username, password, level FROM users WHERE ' . $column . '=:value');
+            $stm->bindValue(':value', $value, PDO::PARAM_STR);
             $stm->execute();
             return $stm->fetch(PDO::FETCH_OBJ);
-        }
-
-        public static function getUser($username) {
-            $connect = Connection::connect();
-            $stm = $connect->prepare('SELECT * FROM users WHERE username=:username');
-            $stm->bindValue(':username', $username, PDO::PARAM_STR);
-            $stm->execute();
-            return $stm->fetch(PDO::FETCH_ASSOC);
         }
 
         public static function readAllUsers() {

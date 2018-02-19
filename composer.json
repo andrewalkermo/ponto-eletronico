@@ -1,0 +1,5 @@
+{
+    "require": {
+        "kint-php/kint": "^2.2"
+    }
+}

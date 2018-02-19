@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="/assets/img/projecta-title.png" type="image/png" />
-        <title>Ponto - Projecta </title>
-        <link rel="stylesheet" href="/vendors/gainTime-2.2.2/css/gaintime.min.css" media ="screen" title="no title">
-        <link rel="stylesheet" href="/assets/css/stylesheet.css" media ="screen" title="no title">
-    </head>
+
+    <?php include('../includes/head.inc') ?>
 
     <body class="panel">
 
@@ -22,7 +15,7 @@
             <nav>
                 <ul>
                     <a href="/#"><li class="active">Ponto</li></a>
-                    <a href="/#"><li>Login</li></a>
+                    <a href="/views/login"><li>Login</li></a>
                 </ul>
             </nav>
         </header>
@@ -37,16 +30,20 @@
                     <div class="nome-div">
                         <div class="">
                             <label for="name"class="title"><h3>Nome:</h3></label>
-                            <input id="name" type="text" name="nome" class="" data-validate="text" value="">
+                            <input id="name" type="text" name="nome" data-validate="text" value="">
                         </div>
-                        <div class="gt-form">
-                            <button type="button"class="btn success center projecta-black" onclick="nextDiv('nome-div', 'tipo-div')" name="button">Próximo</button>
+                        <div class="flex-box">
+                            <div class="col">
+                            </div>
+                            <button type="button"class="col btn success projecta-black" onclick="nextDiv('nome-div', 'tipo-div')" name="button">Próximo</button>
+                            <div class="col">
+                            </div>
                         </div>
                     </div>
                     <div class="tipo-div" style="display:none">
                         <h3>Selecione o tipo de ponto!</h3>
                         <div class="flex-box center">
-                            <button type="button" class="col btn projecta-yellow succes" name="button" onclick="nextDiv('tipo-div', 'periodo-div')" >Hórario de sede</button>
+                            <button type="button" class="col btn projecta-yellow success" name="button" onclick="nextDiv('tipo-div', 'periodo-div')" >Hórario de sede</button>
                             <button type="button" class="col btn projecta-black danger" name="button" onclick="nextDiv('tipo-div', 'periodo-div')" >Trabalho em Projeto</button>
                             <button type="button" class="col btn projecta-yellow success" name="button" onclick="nextDiv('tipo-div', 'periodo-div')" >Horário em atividades</button>
                         </div>
@@ -63,8 +60,12 @@
                             <label for="name"class="title"><h3>Horário:</h3></label>
                             <input id="name" type="text" name="nome" class="" data-validate="text" value="">
                         </div>
-                        <div class="gt-form">
-                            <button type="button"class="btn projecta-black success center" name="button">Finalizar</button>
+                        <div class="flex-box">
+                            <div class="col">
+                            </div>
+                            <button type="button"class="col btn projecta-black success center" name="button">Finalizar</button>
+                            <div class="col">
+                            </div>
                         </div>
                     </div>
 
@@ -73,7 +74,7 @@
             </section>
         </main>
 
-        <script type="text/javascript" src="/vendors/gainTime-2.2.2/js/gaintime.min.js"></script>
+        <script type="text/javascript" src="/vendor/gainTime-2.2.2/js/gaintime.min.js"></script>
         <script type="text/javascript">
 
             function nextDiv(divAtual, divProxima) {
@@ -84,11 +85,7 @@
             }
 
         </script>
-        <footer id="footer" class="dark">
-                <div class="center">
-                    <img class="center" src="/assets/img/projecta-footer.png" alt="">
-                </div>
-        </footer>
+        <?php include('../includes/footer.inc') ?>
     </body>
 
 </html>
