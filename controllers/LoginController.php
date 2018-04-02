@@ -1,7 +1,6 @@
 <?php
 // require_once('/helpers/Session.php');
 require_once('UserController.php');
-require_once('../vendor/autoload.php');
 // Session::checkSession();
 
 class LoginController {
