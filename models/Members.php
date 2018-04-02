@@ -1,13 +1,13 @@
 <?php
-    require_once('/helpers/Connection.php');
+    require_once(__DIR__ .'/../helpers/Connection.php');
 
-    class Members {
-        public $id;
+    class Members extends Connection {
+        public $id_member;
         public $name;
 
         function __construct($attributes = array()) {
             if (!empty($attributes)) {
-                $this->id = array_key_exists('id', $attributes) ? $attributes['id'] : '';
+                $this->id_member = array_key_exists('id_member', $attributes) ? $attributes['id_member'] : '';
                 $this->name = array_key_exists('name', $attributes) ? $attributes['name'] : '';
             }
         }
@@ -21,31 +21,31 @@
 
         public function update() {
             $connect = Connection::connect();
-            $stm = $connect->prepare('UPDATE `members` SET name=:name WHERE id=:id');
-            $stm->bindValue(':id', $this->id, PDO::PARAM_INT);
+            $stm = $connect->prepare('UPDATE `members` SET name=:name WHERE id_member=:id_member');
+            $stm->bindValue(':id_member', $this->id_member, PDO::PARAM_INT);
             $stm->bindValue(':name', $this->name, PDO::PARAM_STR);
             return $stm->execute();
 
         }
 
-        public function delete($id) {
+        public function delete($id_member) {
             $connect = Connection::connect();
-            $stm = $connect->prepare('DELETE FROM members WHERE id = :id');
-            $stm->bindValue(':id', $id, PDO::PARAM_INT);
+            $stm = $connect->prepare('DELETE FROM members WHERE id_member = :id_member');
+            $stm->bindValue(':id_member', $id_member, PDO::PARAM_INT);
             return $stm->execute();
         }
 
-        public static function readUser($id) {
+        public static function readOne($id_member) {
             $connect = Connection::connect();
-            $stm = $connect->prepare('SELECT id, name FROM members WHERE id=:id');
-            $stm->bindValue(':id', $id, PDO::PARAM_INT);
+            $stm = $connect->prepare('SELECT id_member, name FROM members WHERE id_member=:id_member');
+            $stm->bindValue(':id_member', $id_member, PDO::PARAM_INT);
             $stm->execute();
             return $stm->fetch(PDO::FETCH_OBJ);
         }
 
-        public static function readAllUsers() {
+        public static function readAll() {
             $connect = Connection::connect();
-            $stm = $connect->prepare('SELECT id, name FROM members');
+            $stm = $connect->prepare('SELECT id_member, name FROM members');
             $stm->execute();
             return $stm->fetchAll(PDO::FETCH_OBJ);
         }

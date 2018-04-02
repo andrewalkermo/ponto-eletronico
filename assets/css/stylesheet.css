@@ -1,7 +1,9 @@
 .dark{
     background-color: #000000;
 }
-
+main {
+    min-height:50%;
+}
 .panel{
     background-color:#f6c100;
 }
@@ -38,9 +40,10 @@
     border-color: #f6c100;
 }
 footer{
-    position:fixed;
+    position: relative;
     bottom:0;
     width:100%;
+
 }
 
 .panel section, .container {
@@ -68,4 +71,40 @@ section::after {
 .col {
     width: 40%;
     max-width: 40%;
+}
+
+/*-----------------------------------------*/
+
+
+.autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+    display: inline-block;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: #e9e9e9;
+}
+.autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important;
+    color: #ffffff;
 }

@@ -27,11 +27,12 @@
                 </div>
 
                 <div class="tipo-div gt-form center" >
-                    <h3>Selecione o que deseja fazer</h3>
+                    <h3>Selecione o que deseja fazer.</h3>
                     <div class="flex-box center">
-                        <button type="button" class="col btn projecta-yellow success" name="button">Membros</button>
-                        <button type="button" class="col btn projecta-black danger" name="button">Horários</button>
-                        <button type="button" class="col btn projecta-yellow success" name="button">Relatórios</button>
+                        <a href="/views/membros" class="col btn projecta-yellow success" style="text-align:center">Membros</a>
+                        <a href="/views/membros" class="col btn projecta-black success" style="text-align:center">Horários</a>
+                        <a href="/views/membros" class="col btn projecta-yellow success" style="text-align:center">Relatórios</a>
+
                     </div>
                 </div>
 
