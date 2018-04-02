@@ -129,6 +129,6 @@ $postActions = array('create', 'update', 'changePassword', 'recoverPassword');
 if (isset($_POST['action']) && in_array($_POST['action'], $postActions)) {
     $action = $_POST['action'];
     UserController::$action();
-} elseif (!empty(key($_GET)) &&  key($_GET) == "delete") {
+} elseif (!empty($_GET)) {
     UserController::delete();
 }
