@@ -9,19 +9,28 @@ class PointController{
 
     public static function create() {
         if(isset($_POST['ponto']) && !empty($_POST['ponto']) && $_POST['ponto'] != null){
+            if(!(isset($_POST['ponto']['begin_time'])) || empty($_POST['ponto']['begin_time']) || $_POST['ponto']['begin_time'] == null) {
+                if(isset($_POST['ponto']['end_time']) && !empty($_POST['ponto']['end_time']) && $_POST['ponto']['end_time'] != null) {
+                    $_POST['ponto']['begin_time'] = $_POST['ponto']['end_time'];
+                }
+                else{
+                    $_POST['ponto']['begin_time'] = date('H:i');
+                }
+            }
             $_POST['ponto']['date'] = date('Y-m-d H:i:s');
             $_POST['ponto']['end_time'] = null;
             $point = new Point($_POST['ponto']);
             try {
                 $point->create();
-                $_SESSION['msg'] = null;
+                $_SERVER['msg'] = 'success';
+                header('Location:../views/ponto/index.php?r='. $_POST['ponto']['begin_time']);
+
             }
             catch(PDOException $e) {
-                $_SESSION['msg'] = null;
-                d($e);
+                $_SERVER['msg'] = 'error';
+                header('Location:../views/ponto/index.php?r=null');
             }
         }
-        header('Location:../views/ponto/index.php');
     }
 
     public static function update() {

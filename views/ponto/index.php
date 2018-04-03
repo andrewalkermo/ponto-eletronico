@@ -20,7 +20,7 @@
             <nav>
                 <ul>
                     <a href="#  "><li class="active">Ponto</li></a>
-                    <a href="/views/login"><li>Login</li></a>
+                    <a href="/views/painel"><li>ADM Page</li></a>
                 </ul>
             </nav>
         </header>
@@ -65,6 +65,7 @@
                             <button type="button" class="col btn projecta-black warning" name="ponto['begin_time']" value="true" onclick="nextDiv('periodo-div', 'horario-div');setNameOnInputbyButton('period', 'ponto[begin_time]');" >Começo</button>
                             <button type="button" class="col btn projecta-yellow danger" name="ponto['end_time']" value="true" onclick="nextDiv('periodo-div', 'horario-div');setNameOnInputbyButton('period', 'ponto[end_time]');" >Término</button>
                         </div>
+
                     </div>
                     <div class="horario-div" style="display:none">
                         <div class="">
@@ -74,7 +75,7 @@
                         <div class="flex-box">
                             <div class="col">
                             </div>
-                            <button type="submit" class="col btn projecta-black success center" name="action" value="create" onclick="setValueOnInputbyInput('period', 'time')">Finalizar</button>
+                            <button id="submit" type="submit" class="col btn projecta-black success center" name="action" value="create" onclick="setValueOnInputbyInput('period', 'time')">Finalizar</button>
                             <div class="col">
                             </div>
                         </div>
@@ -85,12 +86,49 @@
             </section>
         </main>
 
-<!--        <script type="text/javascript" src="/vendor/gainTime-2.2.2/js/gaintime.min.js"></script>-->
         <script type="text/javascript">
 
             var membros = (<?= $membros;?>);
+            var msg = <?= (isset($_GET['r']) && !empty($_GET['r']) && $_GET['r'] != null) ? ( '\'' . $_GET['r'] . '\'' ) : '\'\'';?>;
 
+            if(msg != '' && msg != 'null'){
+                swal({
+                    icon: "success",
+                    button: false,
+                    text: "Você bateu o ponto com o horário: "  + msg,
+
+                });
+
+
+                setTimeout(function () {
+                    swal.close();
+                    window.location='.';
+                }, 2000);
+
+            }
+            else if(msg == 'null'){
+                swal({
+                    icon: "error",
+                    button: false,
+                    text: "Erro ao tentar bater o ponto",
+
+                });
+
+
+                setTimeout(function () {
+                    swal.close();
+                    window.location='.';
+                }, 2000);
+
+            }
             function nextDiv(divAtual, divProxima) {
+                if(divProxima == 'horario-div' && $("#type").val() == 'sede'){
+                    var time = new Date();
+                    $("#time").val((time.getHours() + ":" + time.getMinutes()));
+                    console.log($("#time").val());
+                    return $("#submit").click();
+
+                }
                 var divAtual = (document.getElementsByClassName(divAtual))[0];
                 var divProxima = (document.getElementsByClassName(divProxima))[0];
                 divAtual.setAttribute("style", "display:none");
@@ -147,12 +185,13 @@
                             b.innerHTML += arr[i].name.substr(val.length);
                             /*insert a input field that will hold the current array item's value:*/
                             b.innerHTML += "<input type='hidden' value='" + arr[i].name + "'>";
-                            $("#fk_members").val(arr[i].id_members);
-
+                            b.innerHTML += "<input type='hidden' value='" + arr[i].id_member + "'>";
                             /*execute a function when someone clicks on the item value (DIV element):*/
                             b.addEventListener("click", function(e) {
                                 /*insert the value for the autocomplete text field:*/
                                 inp.value = this.getElementsByTagName("input")[0].value;
+                                $("#fk_members").val(this.getElementsByTagName("input")[1].value);
+
                                 /*close the list of autocompleted values,
                                 (or any other open lists of autocompleted values:*/
                                 closeAllLists();
@@ -219,6 +258,7 @@
             }
 
         </script>
+        <!--        <script type="text/javascript" src="/vendor/gainTime-2.2.2/js/gaintime.min.js"></script>-->
         <?php include('../includes/footer.inc') ?>
     </body>
 
