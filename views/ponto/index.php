@@ -19,8 +19,8 @@
             </label>
             <nav>
                 <ul>
-                    <a href="#  "><li class="active">Ponto</li></a>
-                    <a href="/views/painel"><li>ADM Page</li></a>
+                    <a href="#"><li class="active">Ponto</li></a>
+<!--                    <a href="/views/painel"><li>ADM Page</li></a>-->
                 </ul>
             </nav>
         </header>
@@ -37,7 +37,7 @@
                             <label for="name"class="title"><h3>Nome:</h3></label>
                             <input id="fk_members" type="hidden" name="ponto[fk_members]" data-validate="" placeholder="" value="">
                             <div class="autocomplete" style="width:100%;">
-                                <input id="name" type="text" name="" data-validate="text" placeholder="Amarelinho" value="">
+                                <input id="name" type="text" name="" data-validate="text" placeholder="Amarelinhx" value="">
                             </div>
 
                         </div>
@@ -53,17 +53,20 @@
                         <h3>Selecione o tipo de ponto!</h3>
                         <div class="flex-box center">
                             <input id="type" type="hidden" name="ponto[type]" class="" data-validate="">
-                            <button type="button" class="col btn projecta-yellow success" onclick="nextDiv('tipo-div', 'periodo-div');setValueOnInputbyButton('type', 'sede');" >Hórario de sede</button>
-                            <button type="button" class="col btn projecta-black danger" onclick="nextDiv('tipo-div', 'periodo-div');setValueOnInputbyButton('type', 'projeto')" >Trabalho em Projeto</button>
-                            <button type="button" class="col btn projecta-yellow success" onclick="nextDiv('tipo-div', 'periodo-div');setValueOnInputbyButton('type', 'atividade')" >Horário em atividades</button>
+                            <button type="button" class="col btn projecta-yellow success" onclick="setValueOnInputbyButton('type', 'sede');nextDiv('tipo-div', 'periodo-div');" >Hórario de sede</button>
+                            <button type="button" class="col btn projecta-black danger" onclick="setValueOnInputbyButton('type', 'projeto');nextDiv('tipo-div', 'periodo-div');" >Trabalho em Projeto</button>
+                            <button type="button" class="col btn projecta-yellow success" onclick="setValueOnInputbyButton('type', 'atividade');nextDiv('tipo-div', 'periodo-div');" >Horário em atividades</button>
                         </div>
                     </div>
                     <div class="periodo-div" style="display:none">
                         <h3>Selecione o período!</h3>
+                        <div id="aviso-atividade" class="inform warning" style="display: none">
+                            <p>Visitas, benchmarking, atividades da sua diretoria... Qualquer tempo dedicado a Projecta sem que você esteja na sede ; )</p>
+                        </div>
                         <div class="flex-box center">
                             <input id="period" type="hidden" class="" data-validate="">
-                            <button type="button" class="col btn projecta-black warning" name="ponto['begin_time']" value="true" onclick="nextDiv('periodo-div', 'horario-div');setNameOnInputbyButton('period', 'ponto[begin_time]');" >Começo</button>
-                            <button type="button" class="col btn projecta-yellow danger" name="ponto['end_time']" value="true" onclick="nextDiv('periodo-div', 'horario-div');setNameOnInputbyButton('period', 'ponto[end_time]');" >Término</button>
+                            <button type="button" class="col btn projecta-black warning" name="ponto['begin_time']" value="true" onclick="setNameOnInputbyButton('period', 'ponto[begin_time]');nextDiv('periodo-div', 'horario-div');" >Começo</button>
+                            <button type="button" class="col btn projecta-yellow danger" name="ponto['end_time']" value="true" onclick="setNameOnInputbyButton('period', 'ponto[end_time]');nextDiv('periodo-div', 'horario-div');" >Término</button>
                         </div>
 
                     </div>
@@ -75,7 +78,7 @@
                         <div class="flex-box">
                             <div class="col">
                             </div>
-                            <button id="submit" type="submit" class="col btn projecta-black success center" name="action" value="create" onclick="setValueOnInputbyInput('period', 'time')">Finalizar</button>
+                            <button id="submit" type="submit" class="col btn projecta-black success center" name="action" value="" onclick="setValueOnInputbyInput('period', 'time')">Finalizar</button>
                             <div class="col">
                             </div>
                         </div>
@@ -87,6 +90,9 @@
         </main>
 
         <script type="text/javascript">
+
+
+            $("#time").mask("99:99");
 
             var membros = (<?= $membros;?>);
             var msg = <?= (isset($_GET['r']) && !empty($_GET['r']) && $_GET['r'] != null) ? ( '\'' . $_GET['r'] . '\'' ) : '\'\'';?>;
@@ -121,18 +127,42 @@
                 }, 2000);
 
             }
+
             function nextDiv(divAtual, divProxima) {
+
                 if(divProxima == 'horario-div' && $("#type").val() == 'sede'){
                     var time = new Date();
                     $("#time").val((time.getHours() + ":" + time.getMinutes()));
-                    console.log($("#time").val());
                     return $("#submit").click();
 
                 }
+                if(divProxima == 'periodo-div' && $("#type").val() == 'atividade'){
+                    $("#aviso-atividade").show();
+
+                }
+                if(divProxima == 'tipo-div') {
+                    var id = String($("#fk_members").val());
+                    var url = "../../controllers/PointController.php?id=1";
+                    /*$.ajax({
+                        url: url,
+                        dataType: "json",
+                        type: "GET",
+                        async: false,
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            if(data.success){
+
+                            }
+                        }
+                    })*/
+                }
+
                 var divAtual = (document.getElementsByClassName(divAtual))[0];
                 var divProxima = (document.getElementsByClassName(divProxima))[0];
+
                 divAtual.setAttribute("style", "display:none");
                 divProxima.removeAttribute("style");
+
             }
 
             function setValueOnInputbyButton(input, value) {
@@ -143,6 +173,14 @@
             function setNameOnInputbyButton(input, value) {
                 var input = (document.getElementById(input));
                 input.setAttribute("name", value);
+                if (value == 'ponto[begin_time]'){
+                    $("#submit").val('create');
+                    console.log(input);
+                }
+                else if(value == 'ponto[end_time]'){
+                    $("#submit").val('update');
+                }
+
             }
 
             function setValueOnInputbyInput(input, input2) {
@@ -152,10 +190,7 @@
                 input2.removeAttribute("name");
             }
 
-            $("#time").mask("99:99");
-
             autocomplete(document.getElementById("name"), membros);
-
 
             function autocomplete(inp, arr) {
                 /*the autocomplete function takes two arguments,

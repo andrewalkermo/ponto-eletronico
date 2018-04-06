@@ -4,6 +4,12 @@
 main {
     min-height:50%;
 }
+footer{
+    position: relative;
+    bottom:0;
+    width:100%;
+
+}
 .panel{
     background-color:#f6c100;
 }
@@ -38,12 +44,6 @@ main {
 
 .field:focus, .gt-form input[type=text]:focus, .gt-form-inline input[type=text]:focus, .gt-form input[type=number]:focus, .gt-form-inline input[type=number]:focus, .gt-form input[type=password]:focus, .gt-form-inline input[type=password]:focus, .gt-form input[type=email]:focus, .gt-form-inline input[type=email]:focus, .gt-form select:focus, .gt-form-inline select:focus, .gt-form textarea:focus, .gt-form-inline textarea:focus, .has-focus.field, .gt-form input.has-focus[type=text], .gt-form-inline input.has-focus[type=text], .gt-form input.has-focus[type=number], .gt-form-inline input.has-focus[type=number], .gt-form input.has-focus[type=password], .gt-form-inline input.has-focus[type=password], .gt-form input.has-focus[type=email], .gt-form-inline input.has-focus[type=email], .gt-form select.has-focus, .gt-form-inline select.has-focus, .gt-form textarea.has-focus, .gt-form-inline textarea.has-focus {
     border-color: #f6c100;
-}
-footer{
-    position: relative;
-    bottom:0;
-    width:100%;
-
 }
 
 .panel section, .container {
