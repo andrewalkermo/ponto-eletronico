@@ -8,6 +8,9 @@ date_default_timezone_set('America/Bahia');
 class PointController{
 
     public static function create() {
+
+        $data['success'] = false;
+
         if(isset($_POST['ponto']) && !empty($_POST['ponto']) && $_POST['ponto'] != null){
             if($_POST['ponto']['type'] == 'sede') {
                 $_POST['ponto']['begin_time'] = date('H:i');
@@ -20,37 +23,43 @@ class PointController{
             try {
                 $point->create();
                 $_SERVER['msg'] = 'success';
-                header('Location:../views/ponto/index.php?r='. $_POST['ponto']['begin_time']);
+                $data['success'] = true;
+                $data['horario'] = $_POST['ponto']['begin_time'];
 
             }
             catch(PDOException $e) {
                 $_SERVER['msg'] = 'error';
-                header('Location:../views/ponto/index.php?r=null');
+                $data['success'] = false;
+
             }
         }
+        echo json_encode($data);
     }
 
     public static function update() {
+
+        $data['success'] = false;
+
         $ponto = Point::query('SELECT * FROM point where `fk_members` = '.$_POST['ponto']['fk_members'].' AND `end_time` IS NULL AND `type` = "'.$_POST['ponto']['type'].'" ORDER BY `id_point` DESC LIMIT 1');
-        if(isset($_POST['ponto']) && !empty($_POST['ponto']) && $_POST['ponto'] != null){
+        if($ponto && isset($_POST['ponto']) && !empty($_POST['ponto']) && $_POST['ponto'] != null){
             if($_POST['ponto']['type'] == 'sede') {
                 $_POST['ponto']['end_time'] = date('H:i');
             }
             $_POST['ponto']['end_datetime'] = date('Y-m-d H:i:s');
-            $_POST['ponto']['id_point'] = $ponto[0]['id_point'];
+            $_POST['ponto']['id_point'] = $ponto->id_point;
 
             $point = new Point($_POST['ponto']);
             try {
                 $point->update();
-                $_SERVER['msg'] = 'success';
-                return header('Location:../views/ponto/index.php?r='. $_POST['ponto']['end_time']);
+                $data['success'] = true;
+                $data['horario'] = $_POST['ponto']['end_time'];
 
             }
             catch(PDOException $e) {
-                $_SERVER['msg'] = 'error';
-                return header('Location:../views/ponto/index.php?r=null');
+                $data['success'] = false;
             }
         }
+        echo json_encode($data);
     }
 
 
