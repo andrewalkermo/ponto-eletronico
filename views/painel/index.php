@@ -15,10 +15,10 @@
             <nav>
                 <ul>
                     <a href="/#"><li class="active">Painel</li></a>
-                    <a href="/views/ponto"><li>Logout</li></a>
+<!--                    <a href="/views/ponto"><li>Logout</li></a>-->
                 </ul>
             </nav>
-        </header>
+        </header>'
 
         <main>
             <section class="center">
@@ -30,17 +30,36 @@
                     <h3>Selecione o que deseja fazer.</h3>
                     <div class="flex-box center">
                         <a href="/views/membros" class="col btn projecta-yellow success" style="text-align:center">Membros</a>
-                        <a href="/views/membros" class="col btn projecta-black success" style="text-align:center">Horários</a>
-                        <a href="/views/membros" class="col btn projecta-yellow success" style="text-align:center">Relatórios</a>
+                        <a href="#" data-modal="modal-relatorio" class="col btn projecta-black success" style="text-align:center">Relatórios</a>
+<!--                        <a href="/views/membros" class="col btn projecta-yellow success" style="text-align:center">Relatórios</a>-->
 
                     </div>
+
+                    <div class="gt-modal">
+                        <div id="modal-relatorio" class="modal">
+                            <!-- Este botão é responsável por fechar o modal -->
+                            <button class="modal-close" type="button">×</button>
+                            <div class="modal-body">
+                                <div class="flex-box center">
+                                    <button class=" col btn projecta-yellow success" style="text-align:center">Tabela dos membros</button>
+                                    <button class=" col btn projecta-black success" style="text-align:center">Tabela de Sede</button>
+                                </div>
+
+                                <div id="modal-tabela-sede" class="gt-form-inline">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </section>
+            <?php include('../includes/footer.inc') ?>
+
         </main>
 
         <script type="text/javascript" src="/vendor/gainTime-2.2.2/js/gaintime.min.js"></script>
-        <?php include('../includes/footer.inc') ?>
     </body>
 
 </html>

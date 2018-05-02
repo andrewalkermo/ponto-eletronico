@@ -92,9 +92,9 @@
                 </form>
 
             </section>
+            <?php include(__DIR__ . '/../includes/footer.inc') ?>
         </main>
         <script type="text/javascript" src="../../assets/js/ponto.js"></script>
-        <?php include(__DIR__ . '/../includes/footer.inc') ?>
     </body>
 
 </html>

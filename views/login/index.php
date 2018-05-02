@@ -47,6 +47,8 @@
                 </form>
 
             </section>
+            <?php include('../includes/footer.inc') ?>
+
         </main>
 
         <script type="text/javascript" src="/vendor/gainTime-2.2.2/js/gaintime.min.js"></script>
@@ -62,7 +64,6 @@
         </script>
 
 
-        <?php include('../includes/footer.inc') ?>
     </body>
 
 </html>

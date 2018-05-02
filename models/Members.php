@@ -45,7 +45,7 @@
 
         public static function readAll() {
             $connect = Connection::connect();
-            $stm = $connect->prepare('SELECT id_member, name FROM members');
+            $stm = $connect->prepare('SELECT id_member, name FROM members ORDER BY name');
             $stm->execute();
             return $stm->fetchAll(PDO::FETCH_OBJ);
         }

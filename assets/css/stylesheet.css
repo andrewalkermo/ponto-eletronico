@@ -2,13 +2,29 @@
     background-color: #000000;
 }
 main {
-    min-height:50%;
+    min-height:calc(100% - 130px);
 }
 footer{
-    position: relative;
-    bottom:0;
+    position: fixed;
+    bottom:0px;
     width:100%;
 
+}
+@media (max-width: 768px) {
+    footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+
+    }
+}
+@media (max-width: 768px) {
+    footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+
+    }
 }
 .panel{
     background-color:#f6c100;

@@ -20,8 +20,8 @@ $_GET['key']=null;
             </label>
             <nav>
                 <ul>
-                    <a href="/#"><li class="active">Painel</li></a>
-                    <a href="/views/ponto"><li>Logout</li></a>
+                    <a href="/views/painel"><li class="active">Painel</li></a>
+<!--                    <a href="/views/ponto"><li>Logout</li></a>-->
                 </ul>
             </nav>
         </header>
@@ -133,10 +133,11 @@ $_GET['key']=null;
                 </div>
 
             </section>
+            <?php include('../includes/footer.inc') ?>
+
         </main>
 
         <script type="text/javascript" src="/vendor/gainTime-2.2.2/js/gaintime.min.js"></script>
-        <?php include('../includes/footer.inc') ?>
         <script type="text/javascript">
             function setValueOnInput(id, name) {
                 $("#updateId").val(id);
