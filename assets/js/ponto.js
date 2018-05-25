@@ -80,10 +80,10 @@ function setNameOnInputbyButton(input, value) {
     var input = (document.getElementById(input));
     input.setAttribute("name", value);
     if (value == 'ponto[begin_time]'){
-        $("#submit-input").val('create');t
+        $("#submit-input").val('create');
     }
     else if(value == 'ponto[end_time]'){
-        $("#submit-input").val('update');t
+        $("#submit-input").val('update');
 
     }
 
@@ -199,7 +199,7 @@ function autocomplete(inp, arr) {
 }
 
 $('#form-ponto').on('submit', function () {
-    var form = $(this);t
+    var form = $(this);
 
     if (form.find('.has-error').length) {
         return false;
@@ -214,6 +214,7 @@ $('#form-ponto').on('submit', function () {
         processData: false,
         contentType: false,
         success: function (data) {
+            console.log(data);
             data = JSON.parse(data);
             if(data.success){
                 swal({

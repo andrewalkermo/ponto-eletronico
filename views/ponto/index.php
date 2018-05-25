@@ -11,7 +11,7 @@
     <body class="panel">
 
         <header class="gt-top-menu xs-left">
-            <img src="/assets/img/projecta-logo.png" alt="Projecta" />
+            <a href="/"><img src="/assets/img/projecta-logo.png" alt="Projecta" data-tooltipe="Inicio" /></a>
             <label class="menu-toggle">
                 <svg viewBox="0 0 24 24">
                 <path fill="#333" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path>
@@ -73,7 +73,7 @@
                     <div class="horario-div" style="display:none">
                         <div class="">
                             <label for="name"class="title"><h3>Horário:</h3></label>
-                            <input id="time" type="text" name="ponto['time']" class="" data-validate="" placeholder="04:20" value="">
+                            <input id="time" type="text" name="ponto['time']" class="" data-validate="" placeholder="00:00" value="">
                         </div>
                         <div class="flex-box">
                             <div class="col">
@@ -94,6 +94,12 @@
             </section>
             <?php include(__DIR__ . '/../includes/footer.inc') ?>
         </main>
+        <script type="text/javascript" src="../../vendor/gainTime-2.2.2/js/gaintime.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/jquery.mask.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../../assets/js/ponto.js"></script>
     </body>
 

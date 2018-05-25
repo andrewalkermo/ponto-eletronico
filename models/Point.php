@@ -65,11 +65,20 @@
             $stm->execute();
             return $stm->fetchAll(PDO::FETCH_OBJ);
         }
+
         public static function query($query) {
 
             $connect = Connection::connect();
             $stm = $connect->query($query);
             $stm->execute();
             return $stm->fetch(PDO::FETCH_OBJ);
+        }
+
+        public static function queryAll($query) {
+
+            $connect = Connection::connect();
+            $stm = $connect->query($query);
+            $stm->execute();
+            return $stm->fetchAll(PDO::FETCH_OBJ);
         }
     }

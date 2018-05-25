@@ -1,4 +1,6 @@
-#AuthType Basic
-#AuthName "Admin PAGE"
-#AuthUserFile /var/www/html/projecta-ponto/views/.htpasswd
-#Require valid-user
+AuthType Basic
+AuthName "Admin PAGE"
+AuthUserFile /views/.htpasswd
+Require valid-user
+
+

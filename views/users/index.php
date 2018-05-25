@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-    <?php include('../includes/head.inc') ?>
-
     <body class="panel">
+
+    <?php include('../includes/head.inc') ?>
 
         <header class="gt-top-menu xs-left">
             <img src="/assets/img/projecta-logo.png" alt="Projecta" />

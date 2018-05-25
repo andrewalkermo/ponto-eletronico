@@ -1,0 +1,6 @@
+Options -Indexes
+RewriteEngine On
+ErrorDocument 404 /
+ErrorDocument 403 /painel
+ErrorDocument 401 /
+RewriteRule ^painel /views/painel/index.php

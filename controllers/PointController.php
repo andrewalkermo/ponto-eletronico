@@ -40,7 +40,7 @@ class PointController{
 
         $data['success'] = false;
 
-        $ponto = Point::query('SELECT * FROM point where `fk_members` = '.$_POST['ponto']['fk_members'].' AND `end_time` IS NULL AND `type` = "'.$_POST['ponto']['type'].'" ORDER BY `id_point` DESC LIMIT 1');
+        $ponto = self::query('SELECT * FROM point where `fk_members` = '.$_POST['ponto']['fk_members'].' AND `end_time` IS NULL AND `type` = "'.$_POST['ponto']['type'].'" ORDER BY `id_point` DESC LIMIT 1');
         if($ponto && isset($_POST['ponto']) && !empty($_POST['ponto']) && $_POST['ponto'] != null){
             if($_POST['ponto']['type'] == 'sede') {
                 $_POST['ponto']['end_time'] = date('H:i');
@@ -49,6 +49,15 @@ class PointController{
             $_POST['ponto']['id_point'] = $ponto->id_point;
 
             $point = new Point($_POST['ponto']);
+
+            $horarioUm = new DateTime($ponto->begin_datetime);
+            $horarioLimite = $horarioUm->modify('+12 hour');
+            $horarioDois = new DateTime($_POST['ponto']['end_datetime']);
+            if ($horarioDois > $horarioLimite){
+                $data['success'] = false;
+                echo json_encode($data);
+                return;
+            }
             try {
                 $point->update();
                 $data['success'] = true;
@@ -92,6 +101,29 @@ class PointController{
     public static function selectAll() {
         try {
             $points = Point::readAll();
+            $_SESSION['msg'] = null;
+            return $points;
+        }
+        catch (pdoexception $e) {
+            $_SESSION['msg'] = null;
+            echo $e;
+        }
+    }
+
+    public static function query($query) {
+        try {
+            $points = Point::query($query);
+            $_SESSION['msg'] = null;
+            return $points;
+        }
+        catch (pdoexception $e) {
+            $_SESSION['msg'] = null;
+            echo $e;
+        }
+    }
+    public static function queryAll($query) {
+        try {
+            $points = Point::queryAll($query);
             $_SESSION['msg'] = null;
             return $points;
         }

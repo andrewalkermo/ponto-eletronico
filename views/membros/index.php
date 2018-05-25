@@ -8,11 +8,12 @@ $_GET['key']=null;
 <html>
 
     <?php include('../includes/head.inc') ?>
-
     <body class="panel">
 
-        <header class="gt-top-menu xs-left">
-            <img src="/assets/img/projecta-logo.png" alt="Projecta" />
+    <script type="text/javascript" src="../../vendor/gainTime-2.2.2/js/gaintime.min.js"></script>
+
+    <header class="gt-top-menu xs-left">
+            <a href="/"><img src="/assets/img/projecta-logo.png" alt="Projecta" /></a>
             <label class="menu-toggle">
                 <svg viewBox="0 0 24 24">
                 <path fill="#333" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path>
@@ -20,8 +21,11 @@ $_GET['key']=null;
             </label>
             <nav>
                 <ul>
-                    <a href="/views/painel"><li class="active">Painel</li></a>
-<!--                    <a href="/views/ponto"><li>Logout</li></a>-->
+                    <a href="/views/painel"><li class="">Painel</li></a>
+                    <a href="/#"><li class="active">Membros</li></a>
+                    <a href="/views/relatorio"><li class="">Relatórios</li></a>
+                    <a href="/"><li class="">Ponto</li></a>
+
                 </ul>
             </nav>
         </header>
@@ -39,7 +43,7 @@ $_GET['key']=null;
                             <h3>Membros</h3>
                         </div>
                         <div class="xs-4 text-right">
-                            <button href="/views/membros" class="btn projecta-yellow success" style="text-align:center" data-modal="createMember">Novo</button>
+                            <button class="btn projecta-yellow success" style="text-align:center" data-modal="createMember">Novo</button>
 
                         </div>
                     </div>
@@ -78,7 +82,6 @@ $_GET['key']=null;
                     </table>
 
                     <div class="gt-modal">
-                        <!-- Aqui você vai atribuir um id ao seu modal -->
                         <div id="createMember" class="modal">
                             <!-- Este botão é responsável por fechar o modal -->
                             <button class="modal-close" type="button">×</button>
@@ -104,7 +107,6 @@ $_GET['key']=null;
                     </div>
 
                     <div class="gt-modal">
-                        <!-- Aqui você vai atribuir um id ao seu modal -->
                         <div id="updateMember" class="modal">
                             <!-- Este botão é responsável por fechar o modal -->
                             <button class="modal-close" type="button">×</button>
@@ -137,8 +139,10 @@ $_GET['key']=null;
 
         </main>
 
-        <script type="text/javascript" src="/vendor/gainTime-2.2.2/js/gaintime.min.js"></script>
         <script type="text/javascript">
+
+
+            $("#footer").css("position", "relative");
             function setValueOnInput(id, name) {
                 $("#updateId").val(id);
                 $("#updateName").val(name);
