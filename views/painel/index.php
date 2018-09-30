@@ -21,9 +21,9 @@ $members = PointController::queryAll('SELECT members.name as nome , point.begin_
                 AND `end_datetime` IS NULL 
                 ORDER BY `begin_datetime` DESC
             ');
-//if ($members == null) {
+if ($members == null) {
     $members = [0 => (object) ['nome'=>'Não há ninguém na sede.', 'inicio'=>'00:00', 'duracao'=>'00:00']];
-//}
+}
 $_GET['key']=null;
 ?>
 
