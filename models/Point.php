@@ -24,12 +24,14 @@
 
         public function create() {
             $connect = Connection::connect();
+            // var_dump($this->begin_datetime);die;
+// 
             $stm = $connect->prepare('INSERT INTO `point`(`begin_time`, `end_time`, `begin_datetime`, `end_datetime`, `type`, `fk_members`)VALUES(:begin_time, :end_time, :begin_datetime, :end_datetime, :type, :fk_members)');
             $stm->bindValue(':begin_time', $this->begin_time, PDO::PARAM_STR);
             $stm->bindValue(':end_time', $this->end_time, PDO::PARAM_STR);
             $stm->bindValue(':type', $this->type, PDO::PARAM_STR);
-            $stm->bindValue(':begin_datetime', $this->begin_datetime, PDO::PARAM_INT);
-            $stm->bindValue(':end_datetime', $this->end_datetime, PDO::PARAM_INT);
+            $stm->bindValue(':begin_datetime', $this->begin_datetime, PDO::PARAM_STR);
+            $stm->bindValue(':end_datetime', $this->end_datetime, PDO::PARAM_STR);
             $stm->bindValue(':fk_members', $this->fk_members, PDO::PARAM_INT);
             return $stm->execute();
         }

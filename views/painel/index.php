@@ -1,3 +1,32 @@
+<?php
+require_once('../../controllers/PointController.php');
+date_default_timezone_set('America/Bahia');
+/*SELECT members.name as nome , point.begin_time as inicio , timediff(now(), point.begin_datetime) as duracao FROM point
+
+JOIN members on point.fk_members = members.id_member
+where `begin_datetime` BETWEEN (DATE_SUB(NOW(), INTERVAL 12 HOUR)) AND (now())
+AND `type` = "sede"
+AND `end_datetime` IS NULL
+ORDER BY `begin_datetime` DESC
+*/
+$horario = new DateTime();
+
+$horarioAtual = $horario->format('Y-m-d H:i:s');
+$horario = $horario->modify('-12 hour');
+$horarioInicio = $horario->format('Y-m-d H:i:s');
+$members = PointController::queryAll('SELECT members.name as nome , point.begin_time as inicio , timediff("'.$horarioAtual.'", point.begin_datetime) as duracao FROM point 
+                JOIN members on point.fk_members = members.id_member
+                where `begin_datetime` BETWEEN ("'.$horarioInicio.'") AND ("'.$horarioAtual.'") 
+                AND `type` = "sede"
+                AND `end_datetime` IS NULL 
+                ORDER BY `begin_datetime` DESC
+            ');
+//if ($members == null) {
+    $members = [0 => (object) ['nome'=>'Não há ninguém na sede.', 'inicio'=>'00:00', 'duracao'=>'00:00']];
+//}
+$_GET['key']=null;
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -47,6 +76,47 @@
                     <div class="flex-box center">
                         <a href="/views/membros" class="col btn projecta-yellow success" style="text-align:center">Membros</a>
                         <a href="/views/relatorio" data-modal="" class="col btn projecta-black success" style="text-align:center">Relatórios</a>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="">
+                        <h3 style="text-align: center">Quem está na sede agora.</h3>
+                        <br>
+                        <table class="gt-table striped hovered">
+                            <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Horário de entrada</th>
+                                <th>Duração</th>
+                            </tr>
+                            </thead>
+
+                            <tbody class="text-center">
+                            <?php foreach ($members as $key => $member): ?>
+
+                                <tr>
+                                    <td>
+                                        <?= $member->nome; ?>
+                                    </td>
+                                    <td>
+                                        <?= $member->inicio; ?>
+                                    </td>
+                                    <td>
+                                        <?= $member->duracao; ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach;?>
+                            </tbody>
+
+                            <tfoot>
+                            <tr>
+                                <td colspan="4" class="text-right">
+                                    Pontos batidos a mais de 12 horas atrás serão ignorados.
+                                </td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                        <br>
                     </div>
 
                     <div class="gt-modal">
@@ -102,7 +172,11 @@
         </script>
         <script type="text/javascript">
 
+            $("#footer").css("position", "relative");
+
             $(function() {
+
+
                 var startDate;
                 var endDate;
 
