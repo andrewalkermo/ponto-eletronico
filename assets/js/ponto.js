@@ -262,7 +262,7 @@ $('#form-ponto').on('submit', function () {
             setTimeout(function () {
                 // swal.close();
                 window.location = '.';
-            }, 1000);
+            }, 500);
 
         }
     });
