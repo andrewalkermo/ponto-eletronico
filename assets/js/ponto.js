@@ -199,6 +199,16 @@ function autocomplete(inp, arr) {
 }
 
 $('#form-ponto').on('submit', function () {
+    var loader = document.getElementById("loader");
+    swal({
+        button: false,
+        closeOnClickOutside: false,
+        closeOnEsc: false,
+        title: "Carregando",
+        content: loader,
+
+    });
+
     $("#submit").prop("disabled",true);
     var form = $(this);
 
@@ -220,6 +230,8 @@ $('#form-ponto').on('submit', function () {
             if(data.success){
                 swal({
                     icon: "success",
+                    closeOnClickOutside: false,
+                    closeOnEsc: false,
                     button: false,
                     text: "Você bateu o ponto com o horário: "  + data.horario,
 
@@ -228,6 +240,8 @@ $('#form-ponto').on('submit', function () {
             else {
                 swal({
                     icon: "error",
+                    closeOnClickOutside: false,
+                    closeOnEsc: false,
                     button: false,
                     text: "Erro ao tentar bater o ponto",
 
@@ -237,6 +251,8 @@ $('#form-ponto').on('submit', function () {
         error: function () {
             swal({
                 icon: "error",
+                closeOnClickOutside: false,
+                closeOnEsc: false,
                 button: false,
                 text: "Erro ao tentar bater o ponto",
 
@@ -246,7 +262,7 @@ $('#form-ponto').on('submit', function () {
             setTimeout(function () {
                 // swal.close();
                 window.location = '.';
-            }, 1200);
+            }, 1000);
 
         }
     });

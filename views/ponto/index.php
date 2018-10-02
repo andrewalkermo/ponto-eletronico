@@ -96,8 +96,9 @@
                             </div>
                         </div>
                     </div>
-
-
+                    <div style="display: none">
+                        <div id="loader" class="center"></div>
+                    </div>
                     <input id="membros_array" type="hidden" name="membrosarray" data-validate="" placeholder="" value='<?= $membros;?>'>
                     <input id="submit-input" type="hidden" name="action" data-validate="" placeholder="">
                     <input id="msg" type="hidden" name="msg" data-validate="" placeholder="" value="<?= (isset($_GET['r']) && !empty($_GET['r']) && $_GET['r'] != null) ? ($_GET['r']) : '';?>">
