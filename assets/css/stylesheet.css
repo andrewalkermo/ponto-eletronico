@@ -11,21 +11,12 @@ footer{
 
 }
 @media (max-width: 768px) {
-    footer {
-        position: relative;
-        bottom: 0;
-        width: 100%;
-
+    .col {
+        width: 90%;
+        max-width: 90%;
     }
 }
-@media (max-width: 768px) {
-    footer {
-        position: relative;
-        bottom: 0;
-        width: 100%;
 
-    }
-}
 .panel{
     background-color:#f6c100;
 }
@@ -64,7 +55,7 @@ footer{
 
 .panel section, .container {
     margin: 50px auto;
-    padding: 10px 10px 20px 20px;
+    padding: 10px 10px 50px 20px;
     width: calc(100% - 20%);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
@@ -84,10 +75,7 @@ section::after {
     content: "";
     display: block;
 }
-.col {
-    width: 40%;
-    max-width: 40%;
-}
+
 
 /*-----------------------------------------*/
 
