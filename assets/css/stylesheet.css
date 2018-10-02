@@ -16,6 +16,14 @@ footer{
         max-width: 90%;
     }
 }
+@media (max-height: 600px) {
+    footer{
+        position: relative;
+        bottom:0px;
+        width:100%;
+
+    }
+}
 
 .panel{
     background-color:#f6c100;
