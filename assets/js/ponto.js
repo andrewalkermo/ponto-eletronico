@@ -199,6 +199,7 @@ function autocomplete(inp, arr) {
 }
 
 $('#form-ponto').on('submit', function () {
+    $("#submit").prop("disabled",true);
     var form = $(this);
 
     if (form.find('.has-error').length) {
