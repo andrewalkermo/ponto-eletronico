@@ -46,7 +46,7 @@ $_GET['key']=null;
         </header>
 
         <main>
-            <section class="center">
+            <section class="center" style="max-height: 500px;overflow-y: auto;">
 
                 <div class="title">
                     <h1>Painel</h1>
@@ -157,7 +157,7 @@ $_GET['key']=null;
         <script type="text/javascript">
 
 
-            $("#footer").css("position", "relative");
+            // $("#footer").css("position", "relative");
             function setValueOnInput(id, name) {
                 $("#updateId").val(id);
                 $("#updateName").val(name);

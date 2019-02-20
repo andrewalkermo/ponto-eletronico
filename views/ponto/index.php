@@ -41,7 +41,7 @@
         <main>
             <section class="center">
                 <div class="title">
-                    <h1>Bem vindo!</h1>
+                    <h1>Bem vindx!</h1>
                 </div>
                 <form autocomplete="off" id="form-ponto"  class="gt-form center" action="../../controllers/PointController.php" method="post">
 
