@@ -79,7 +79,7 @@ $_GET['key']=null;
                     </div>
                     <br>
                     <br>
-                    <div class="">
+                    <div class="membros-na-sede" style="max-height: 400px;overflow-y: auto;">
                         <h3 style="text-align: center">Quem está na sede agora.</h3>
                         <br>
                         <table class="gt-table striped hovered">
@@ -172,7 +172,7 @@ $_GET['key']=null;
         </script>
         <script type="text/javascript">
 
-            $("#footer").css("position", "relative");
+            // $("#footer").css("position", "relative");
 
             $(function() {
 

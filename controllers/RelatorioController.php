@@ -27,7 +27,7 @@
             $colunaInicioSemana = 'B';
 
 
-            $nameFile = (strtoupper('TABELA DE MEMBROS - ' . $type .' - ' . $_POST['relatorio']['beginDate'] .' à ' . $_POST['relatorio']['endDate']) . '.xlsx');
+            $nameFile = (strtoupper('TABELA DE MEMBROS - ' . $type .' - ' . $_POST['relatorio']['beginDate'] .' - ' . $_POST['relatorio']['endDate']) . '.xlsx');
 
             $reader = IOFactory::createReaderForFile(__DIR__ . '/../assets/files/MODEL_TABELA_MEMBROS.xlsx');
             $spreadsheet = $reader->load(__DIR__ . '/../assets/files/MODEL_TABELA_MEMBROS.xlsx');
