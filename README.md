@@ -11,6 +11,8 @@ Telas disponíveis:
  
 **Disponível em:**<br/>
 [Sistema de ponto Eletrônico](https://ponto-andrewalkermo.herokuapp.com/)<br/>
+Usuário: admin
+senha: admin
 
 **Instalação:**<br/>
 
