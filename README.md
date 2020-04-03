@@ -10,9 +10,9 @@ Telas disponíveis:
 - **Relatórios**: Exportação de relatórios semanais contendo a lista de membros e suas horas trabalhadas;
  
 **Disponível em:**<br/>
-[Sistema de ponto Eletrônico](https://ponto-andrewalkermo.herokuapp.com/)<br/>
-Usuário: admin
-senha: admin
+ [Sistema de ponto Eletrônico](https://ponto-andrewalkermo.herokuapp.com/)<br/>
+ Usuário: admin <br/>
+ senha: admin
 
 **Instalação:**<br/>
 
