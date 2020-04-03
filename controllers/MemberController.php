@@ -18,7 +18,7 @@ class MemberController{
                 d($e);
             }
         }
-        header('Location:../views/membros/index.php');
+        header('Location:../membros');
     }
 
     public static function update() {
@@ -34,7 +34,7 @@ class MemberController{
                 var_dump($e); die;
             }
         }
-        header('Location:../views/membros/index.php');
+        header('Location:../membros');
     }
 
 
@@ -48,7 +48,7 @@ class MemberController{
                 $_SESSION['msg'] = null;
             }
         }
-        header('Location:../views/membros/index.php');
+        header('Location:../membros');
     }
 
     public static function select($id) {

@@ -1,6 +1,11 @@
 .dark{
     background-color: #000000;
 }
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
 main {
     min-height:calc(100% - 130px);
 }
@@ -24,7 +29,10 @@ footer{
 
     }
 }
-
+section.center {
+    width: 90%;
+    max-width: 900px;
+}
 .panel{
     background-color:#f6c100;
 }
