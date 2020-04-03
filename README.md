@@ -1,6 +1,6 @@
 # Sistema de Ponto Eletrônico
 
-Sistema de ponto eletrônico simples feito em PHP. Com cadastros de membros e exportação de tabela .xlsx de horas da semana, e controle de acesso utilizando o AuthType Basic do Apache.
+Sistema de ponto eletrônico simples feito em PHP. Com gerenciamento de membros, exportação de tabela .xlsx de horas trabalhadas na semana, e controle de acesso utilizando o AuthType Basic do Apache.
 
 Telas disponíveis:
 
