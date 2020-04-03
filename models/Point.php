@@ -48,7 +48,7 @@
 
         public function delete($id_point) {
             $connect = Connection::connect();
-            $stm = $connect->prepare('DE  LETE FROM point WHERE id_point = :id_point');
+            $stm = $connect->prepare('DELETE FROM point WHERE id_point = :id_point');
             $stm->bindValue(':id_point', $id_point, PDO::PARAM_INT);
             return $stm->execute();
         }

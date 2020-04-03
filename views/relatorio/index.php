@@ -19,7 +19,7 @@
     <body class="panel">
 
         <header class="gt-top-menu xs-left">
-            <a href="/"><img src="/assets/img/projecta-logo.png" alt="Projecta" /></a>
+            <a href="/"><img src="../../assets/img/projecta-logo.png" alt="Projecta" /></a>
             <label class="menu-toggle">
                 <svg viewBox="0 0 24 24">
                 <path fill="#333" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path>
@@ -27,9 +27,9 @@
             </label>
             <nav>
                 <ul>
-                    <a href="/views/painel"><li class="">Painel</li></a>
-                    <a href="/views/membros"><li class="">Membros</li></a>
-                    <a href="/views/relatorio"><li class="active">Relatórios</li></a>
+                    <a href="/painel"><li class="">Painel</li></a>
+                    <a href="/membros"><li class="">Membros</li></a>
+                    <a href="/relatorio"><li class="active">Relatórios</li></a>
                     <a href="/"><li class="">Ponto</li></a>
 
                 </ul>
@@ -49,7 +49,7 @@
                             <div  class="flex-box center">
                                 <input id="inputRelatorio" type="hidden" name="relatorio[relatorio]" data-validate="" placeholder="" value="">
                                 <button type="button" class=" col btn projecta-yellow success" style="text-align:center" onclick="relatorio('#divTipo', 'membros');">Tabela dos membros</button>
-                                <button type="button" class=" col btn projecta-black success" style="text-align:center" onclick="relatorio('#divData', 'sede')">Tabela de Sede</button>
+<!--                                <button type="button" class=" col btn projecta-black success" style="text-align:center" onclick="relatorio('#divData', 'sede')">Tabela de Sede</button>-->
                             </div>
                         </div>
                         <div id="divTipo"style="display: none;">

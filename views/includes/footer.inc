@@ -1,6 +1,6 @@
 <footer id="footer" class="dark">
         <div class="center">
-            <img class="center" src="/assets/img/projecta-footer.png" alt="">
+            <img class="center" src="../../assets/img/projecta-footer.png" alt="">
         </div>
 </footer>
 <script type="text/javascript" src="../../vendor/gainTime-2.2.2/js/gaintime.min.js"></script>

@@ -8,9 +8,11 @@
 out
 gen### Composer template
 composer.phar
-/vendor/kint-php/*
-/vendor/kint-php/**
-/vendor/kint-php/
+/vendor/
+!vendor/gainTime-2.2.2/
+assets/files/*
+!assets/files/MODEL_TABELA_MEMBROS.xlsx
+
 # Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
 # You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
 # composer.lock

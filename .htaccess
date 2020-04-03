@@ -4,3 +4,6 @@ ErrorDocument 404 /
 ErrorDocument 403 /
 ErrorDocument 401 /
 RewriteRule ^painel /views/painel/index.php
+RewriteRule ^relatorio /views/relatorio/index.php
+RewriteRule ^ponto /views/ponto/index.php
+RewriteRule ^membros /views/membros/index.php
