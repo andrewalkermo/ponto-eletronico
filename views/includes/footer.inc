@@ -3,7 +3,7 @@
             <img class="center" src="../../assets/img/projecta-footer.png" alt="">
         </div>
 </footer>
-<script type="text/javascript" src="../../vendor/gainTime-2.2.2/js/gaintime.min.js"></script>
+<script type="text/javascript" src="../../assets/gainTime-2.2.2/js/gaintime.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="../../assets/js/jquery.mask.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

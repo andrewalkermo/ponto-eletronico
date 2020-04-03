@@ -9,7 +9,6 @@ out
 gen### Composer template
 composer.phar
 vendor/
-!vendor/gainTime-2.2.2/*
 assets/files/*
 !assets/files/MODEL_TABELA_MEMBROS.xlsx
 

@@ -35,9 +35,9 @@ $_GET['key']=null;
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="../../assets/img/projecta-title.png" type="image/png" />
         <title>Ponto - Projecta</title>
-        <link rel="stylesheet" href="../../vendor/gainTime-2.2.2/css/gaintime.min.css" media ="screen" title="no title">
+        <link rel="stylesheet" href="../../assets/gainTime-2.2.2/css/gaintime.min.css" media ="screen" title="no title">
         <link rel="stylesheet" href="../../assets/css/stylesheet.css" media ="screen" title="no title">
-        <script type="text/javascript" src="../../vendor/gainTime-2.2.2/js/gaintime.min.js"></script>
+        <script type="text/javascript" src="../../assets/gainTime-2.2.2/js/gaintime.min.js"></script>
         <script type="text/javascript" src="../../assets/js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="../../assets/js/jquery.mask.min.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
