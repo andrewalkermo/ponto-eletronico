@@ -124,7 +124,6 @@
                 $('#startDate').val($.datepicker.formatDate( dateFormat, startDate, inst.settings ));
                 $('#endDate').val($.datepicker.formatDate( dateFormat, endDate, inst.settings ));
                 // $( ".week-picker" ).hide()
-                $("#footer").css("position", "absolute");
                 selectCurrentWeek();
             },
             beforeShowDay: function(date) {
