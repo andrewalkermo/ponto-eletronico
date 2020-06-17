@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `pontoprojecta`
+-- Banco de dados: `ponto`
 --
-CREATE DATABASE IF NOT EXISTS `pontoprojecta` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `pontoprojecta`;
+CREATE DATABASE IF NOT EXISTS `ponto` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `ponto`;
 
 -- --------------------------------------------------------
 

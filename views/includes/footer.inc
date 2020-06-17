@@ -1,4 +1,4 @@
-<footer id="footer" class="dark">
+<footer id="footer" class="dark" style="position: relative; margin-top: 200px;">
         <div class="center">
             <img class="center" src="../../assets/img/clock-invert.png" alt="" style="height: 100px; width: auto">
             <p style="text-align: center; color: white; font-weight: bold">Sistema de Ponto Eletrônico</p>
