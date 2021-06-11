@@ -1,4 +1,4 @@
 AuthType Basic
 AuthName "Admin PAGE"
-AuthUserFile /var/www/html/pessoais/ponto-eletronico/views/.htpasswd
+AuthUserFile /var/www/html/ponto-eletronico/views/.htpasswd
 Require valid-user
