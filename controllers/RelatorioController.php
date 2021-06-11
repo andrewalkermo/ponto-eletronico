@@ -27,7 +27,7 @@
             $colunaInicioSemana = 'B';
 
 
-            $nameFile = (strtoupper('TABELA DE MEMBROS - ' . $type .' - ' . $_POST['relatorio']['beginDate'] .' - ' . $_POST['relatorio']['endDate']) . '.xlsx');
+            $nameFile = (strtoupper('RELATORIO_TABELA_DE_MEMBROS_' . $type .'_' . $_POST['relatorio']['beginDate'] .'_-_' . $_POST['relatorio']['endDate']) . '.xlsx');
             try {
                 $fileName = __DIR__ . '/../assets/files/MODEL_TABELA_MEMBROS.xlsx';
                 $reader = IOFactory::createReaderForFile($fileName);
@@ -99,9 +99,9 @@
                 }
 
                 $writer = new Xlsx($spreadsheet);
-                $writer->save(__DIR__ . '/../assets/files/' . $nameFile);
-                header('Location: http://' . $_SERVER['HTTP_HOST'] . '/assets/files/' . $nameFile);
-//            unlink(__DIR__ . '/../assets/files/' . $nameFile);
+                header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+                header('Content-Disposition: attachment; filename="'. urlencode($nameFile).'"');
+                $writer->save('php://output');
             }
             catch (Exception $e) {
                 var_dump($e);die();

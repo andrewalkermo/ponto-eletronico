@@ -18,10 +18,10 @@
             </label>
             <nav>
                 <ul>
-                    <a href="/painel"><li class="">Painel</li></a>
-                    <a href="/membros"><li class="">Membros</li></a>
-                    <a href="/relatorio"><li class="">Relatórios</li></a>
-                    <a href="/#"><li class="active">Ponto</li></a>
+                    <a href="../painel"><li class="">Painel</li></a>
+                    <a href="../membros"><li class="">Membros</li></a>
+                    <a href="../relatorio"><li class="">Relatórios</li></a>
+                    <a href="../ponto"><li class="active">Ponto</li></a>
                 </ul>
             </nav>
         </header>
@@ -29,7 +29,7 @@
         <main>
             <section class="center">
                 <div class="title">
-                    <h1>Bem vindx!</h1>
+                    <h1>Olá!</h1>
                 </div>
                 <form autocomplete="off" id="form-ponto"  class="gt-form center" action="../../controllers/PointController.php" method="post">
 
@@ -38,7 +38,7 @@
                             <label for="name"class="title"><h3>Nome:</h3></label>
                             <input id="fk_members" type="hidden" name="ponto[fk_members]" data-validate="" placeholder="" value="">
                             <div class="autocomplete" style="width:100%;">
-                                <input id="name" type="text" name="" data-validate="text" placeholder="Amarelinhx" value="">
+                                <input id="name" type="text" name="" data-validate="text" placeholder="Nome do membro" value="">
                             </div>
 
                         </div>

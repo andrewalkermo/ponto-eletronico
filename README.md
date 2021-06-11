@@ -17,7 +17,9 @@ Telas disponíveis:
 **Instalação:**<br/>
 
  1. Faça download do projeto; 
- 2. Execute: `$ composer install` para instalar o phpoffice;
+ 2. Execute: `composer install` para instalar o phpoffice;
  3. Importe o banco de dados MySQL disponível em database/ponto.sql;
  4. Configure o arquivo database/db_connection.conf com os dados do seu banco MySQL;
- 5. Para configurar o controle de acesso do Apache consulte: http://www.ninjawp.com.br/como-proteger-uma-pasta-com-password-pelo-htaccess-e-htpasswd
+ 5. Execute `sh vhost.sh` para criar um virtual host no apache, ou use o arquivo de configuração `local.ponto-eletronico.conf` para configurar manualmente. 
+ 6. Para configurar o controle de acesso do Apache consulte: http://www.ninjawp.com.br/como-proteger-uma-pasta-com-password-pelo-htaccess-e-htpasswd
+ 7. acesse: http://local.ponto-eletronico caso tenha configurado ou acesse a pasta views diretamente por exemplo: http://localhost/ponto-eletronico/views/ponto/
