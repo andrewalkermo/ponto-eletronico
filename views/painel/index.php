@@ -44,10 +44,10 @@ $_GET['key']=null;
     </label>
     <nav>
         <ul>
-            <a href="/#"><li class="active">Painel</li></a>
-            <a href="/membros"><li class="">Membros</li></a>
-            <a href="/relatorio"><li class="">Relatórios</li></a>
-            <a href="/"><li class="">Ponto</li></a>
+            <a href="../Painel"><li class="active">Painel</li></a>
+            <a href="../membros"><li class="">Membros</li></a>
+            <a href="../relatorio"><li class="">Relatórios</li></a>
+            <a href="../ponto"><li class="">Ponto</li></a>
 
         </ul>
     </nav>

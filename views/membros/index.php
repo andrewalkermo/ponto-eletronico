@@ -20,10 +20,10 @@ $_GET['key']=null;
             </label>
             <nav>
                 <ul>
-                    <a href="/painel"><li class="">Painel</li></a>
-                    <a href="/#"><li class="active">Membros</li></a>
-                    <a href="/relatorio"><li class="">Relatórios</li></a>
-                    <a href="/ponto"><li class="">Ponto</li></a>
+                    <a href="../painel"><li class="">Painel</li></a>
+                    <a href="../membros"><li class="active">Membros</li></a>
+                    <a href="../relatorio"><li class="">Relatórios</li></a>
+                    <a href="../ponto"><li class="">Ponto</li></a>
 
                 </ul>
             </nav>
@@ -74,7 +74,7 @@ $_GET['key']=null;
                         <tfoot>
                             <tr>
                                 <td colspan="4" class="text-right">
-                                    Disseminar Uma Arquitetura Transformadora!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, reprehenderit!
                                 </td>
                             </tr>
                         </tfoot>

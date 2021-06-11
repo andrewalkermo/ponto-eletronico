@@ -14,10 +14,10 @@
     </label>
     <nav>
         <ul>
-            <a href="/painel"><li class="">Painel</li></a>
-            <a href="/membros"><li class="">Membros</li></a>
-            <a href="/relatorio"><li class="active">Relatórios</li></a>
-            <a href="/"><li class="">Ponto</li></a>
+            <a href="../painel"><li class="">Painel</li></a>
+            <a href="../membros"><li class="">Membros</li></a>
+            <a href="../relatorio"><li class="active">Relatórios</li></a>
+            <a href="../ponto"><li class="">Ponto</li></a>
 
         </ul>
     </nav>
